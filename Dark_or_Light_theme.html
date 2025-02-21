@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="project.css">
+    <style>
+        body{
+    background-image: url(https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/change-theme-light-bg.png);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#hi{
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
+    </style>
+</head>
+<body id="it">
+    <h1 id="h1" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Dark or Light</h1>
+    <div id="hi">
+    <input type="text" id="id">
+</div>
+<script>
+    let a= document.getElementById("id");
+    let it = document.getElementById("it");
+    let h1 = document.getElementById("h1");
+        
+
+    a.addEventListener("keydown",(event)=>{
+        let inputvalue = a.value;
+
+        if(event.key === "Enter"){
+            if(inputvalue ==="Dark"){
+                it.style.backgroundImage = "url('https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/change-theme-dark-bg.png')";
+                h1.style.color = "white";
+            }
+            else if(inputvalue === "Light"){
+                it.style.backgroundImage = "url('https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/change-theme-light-bg.png')";
+                h1.style.color = "black";
+            }
+            else{
+                alert("Enter either Dark or Light only");
+            }
+        }
+    });
+</script>
+</body>
+</html>
