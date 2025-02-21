@@ -13,28 +13,43 @@
         }
     </style>
 </head>
-<h1 id="h1">10</h1>
+
 <body>
-    <div class="by">
+    <input type="text" id="inpu">
+    <br>
         <img id="f" src="https://cdn.pixabay.com/photo/2017/01/31/16/59/bomb-2025548_640.png">
-    </div>
     
 </body>
+<h1 id="h1">10</h1>
+
 <script>
     var h1=document.querySelector("#h1");
     var f =document.getElementById("f");
+    var inpu = document.getElementById("inpu");
+
+    
+
     let count = 10;
-    let k= setInterval(() => {
+    let k= setInterval(() => {        
         if(count>0){
         count--;
           h1.innerText = count;
           if(count === 0){
             clearInterval(k);
-            h1.innerHTML = "BooooooooooooM!!!!!!!!!!!!!!!";
             f.src = "https://t3.ftcdn.net/jpg/00/42/53/70/360_F_42537001_JMwYOwBmDJ4pXlkMNRUZl8LkZ7TYoa9x.jpg";
+            h1.innerHTML = "BooooooooooooM!!!!!!!!!!!!!!!";
           }
         }
     },1000);
+
+    inpu.addEventListener("keydown",(event)=>{
+            var a = inpu.value;
+            
+            if(a === "Difuse" && count !==0 && event.key == "Enter"){
+                    clearInterval(k);
+                    h1.innerHTML = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! You are SAFE NOW !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+            }
+    })
 
 </script>
 </html>
