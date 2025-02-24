@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-image: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            background-size: cover;
+            height: 100vh;
+        }
+        .all{
+            padding-top: 50px;
+            padding-left: 30px;
+        }
+        h1{
+            font-family: "Playwrite IT Moderna", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .box{
+            
+            width: 500px;
+            height: 800px;            
+            margin-left: 50px;
+            border-radius: 20px;
+            font-family: "Playwrite IT Moderna", serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+
+        }
+        label{
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center" style="padding-top: 10px;">Button Maker</h1>
+    <div class="d-flex flex-row justify-content-center">
+    <div class="box">
+        <div class="all">
+        <label for="bcolor">BACKGROUND COLOR</label><br>
+        <input id="bcolor"><br>
+        <label for="fcolor">FONT COLOR</label><br>
+        <input id="fcolor"><br>
+        <label for="fsize">FONT SIZE</label><br>
+        <input id="fsize"><br>
+        <label for="fweight">FONT WEIGHT</label><br>
+        <input id="fweight"><br>
+        <label for="padding">PADDING (in px)</label><br>
+        <input id="padding"><br>
+        <label for="bradius">BORDER RADIUS (in px)</label><br>
+        <input id="bradius"><br>
+    </div >
+    <div class="text-right" style="margin-right: 60px;">
+    <button class="btn btn-primary " id="Apply">Apply</button>
+</div>
+<div class="cbutton" style="text-align: center;" >
+    <button id="cubutton">Custom Button</button>
+</div>
+</div>
+    </div>
+</body>
+<script>
+        var bcolor=document.getElementById("bcolor");
+        var fcolor=document.getElementById("fcolor");
+        var fsize=document.getElementById("fsize");
+        var fweight=document.getElementById("fweight");
+        var bradius=document.getElementById("bradius");
+        var padding=document.getElementById("padding");
+        var Apply=document.getElementById("Apply");
+        var cubutton=document.getElementById("cubutton");
+
+        Apply.addEventListener("click",()=>{
+            if(bcolor.value === ""){
+                alert("Enter Background Color");
+            }
+            else if(fcolor.value === ""){
+                alert("Enter Font Color");
+            }
+            else if(fsize.value === ""){
+                alert("Enter Font Size");
+            }
+            else if(fweight.value === ""){
+                alert("Enter Font Weight");
+            }
+            else if(padding.value === ""){
+                alert("Enter Padding");
+            }
+            else if(bradius.value === ""){
+                alert("Enter Border Radius");
+            }
+            else{
+                cubutton.style.backgroundColor = bcolor.value;
+                cubutton.style.color = fcolor.value;
+                cubutton.style.fontSize = fsize.value;
+                cubutton.style.fontWeight = fweight.value;
+                cubutton.style.padding = padding.value; 
+                cubutton.style.borderRadius = bradius.value;
+            }
+        })
+
+</script>
+</html>
