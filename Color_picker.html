@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .alldivs{
+        #alldivs{
             display: flex;
 
         }
-        .div1{
+        #div1{
             width: 150px;
             height: 150px;
             background-color: #e0e0e0;
@@ -17,7 +17,7 @@
             border-radius: 20px;
             margin: 10px;
         }
-        .div2{
+        #div2{
             width: 150px;
             height: 150px;
             background-color: #6fcf97;
@@ -25,7 +25,7 @@
             border-radius: 20px;
             margin: 10px;
         }
-        .div3{
+        #div3{
             width: 150px;
             height: 150px;
             background-color: #56ccf2;
@@ -33,7 +33,7 @@
             border-radius: 20px;
             margin: 10px;
         }
-        .div4{
+        #div4{
             width: 150px;
             height: 150px;
             background-color: #bb6bd9;
@@ -41,7 +41,7 @@
             border-radius: 20px;
             margin: 10px;
         }
-        .bgcolor{
+        #bgcolor{
             background-color: black;
             color: white;
             text-align: center;
@@ -51,51 +51,42 @@
         }
     </style>
 </head>
-<body>
-    <h1>Color Picker </h1>
-    <div class="alldivs">
-        <button class="div1"></button>
-        <button class="div2"></button>
-        <button class="div3"></button>
-        <button class="div4"></button>
-    </div>
-    <div class="bgcolor">Background Color : <span id="bcolor"></span></div>
-    <p>Try clicking onone of the colors</p>
-</body>
-</html>
-
-
-
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello, World!</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-      
-      <script src="script.js"></script>
-      
-      <div class="color-picker">
-        <h1 style="font-size: 70px">Color Picker</h1>
-              
-        <div class="colors">
-          <button id="box1">#e0e0e0</button>
-          <button id="box2">#6fcf97</button>
-          <button id="box3">#56ccf2</button>
-          <button id="box4">#bb6bd9</button>
-        </div>
-        </div>
-  </body>
-  <script>
-    var btn1 = document.getElementById('box1');
-    var btn2 = document.getElementById('box2');
-    var btn3 = document.getElementById('box3');
-    var btn4 = document.getElementById('box4');
+<body id="container">
     
-    btn1.addEventListener('click',()=>{
-      style.background
-    })
-  </script>
+    <h1>Color Picker </h1>
+    <div id="alldivs">
+        <button id="div1">#e0e0e0</button>
+        <button id="div2">#6fcf97</button>
+        <button id="div3">#56ccf2</button>
+        <button id="div4">#bb6bd9</button>
+    </div>
+    <div id="bgcolor">Background Color : <span id="bcolor"></span></div>
+    <p>Try clicking on one of the colors above to change the Background color of this page </p>
+</body>
+<script>
+  const b1 = document.getElementById("div1");
+  const b2 = document.getElementById("div2");
+  const b3 = document.getElementById("div3");
+  const b4 = document.getElementById("div4");
+  const body = document.getElementById("container");
+  const bcolor = document.getElementById("bcolor");
+  b1.addEventListener("click",()=>{
+        body.style.backgroundColor = "#e0e0e0";
+        bcolor.innerHTML = "#e0e0e0";
+  })
+  b2.addEventListener("click",()=>{
+        body.style.backgroundColor = "#6fcf97";
+        bcolor.innerHTML = "#6fcf97";
+  })
+  b3.addEventListener("click",()=>{
+        body.style.backgroundColor = "#56ccf2";
+        bcolor.innerHTML = "#56ccf2";
+  })
+  b4.addEventListener("click",()=>{
+        body.style.backgroundColor = "#bb6bd9";
+        bcolor.innerHTML = "#bb6bd9";
+  })
+
+  
+</script>
 </html>
